@@ -352,9 +352,9 @@ export default function CipherForm() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-8">
           <h1 className="text-4xl font-bold text-white mb-2 bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            Cryptography Playground
+            Cryptography Playground by kalhara
           </h1>
-          <p className="text-gray-300">Explore classical encryption methods with interactive visualizations</p>
+          <p className="text-gray-300">Explore encyption techniques related to INS</p>
         </div>
 
         {/* Form */}
