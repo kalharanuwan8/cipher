@@ -329,6 +329,15 @@ export default function CipherForm() {
     }, 500);
   };
 
+  const handleReset = () => {
+    setCipher('caesar');
+    setText('');
+    setKey('');
+    setOperation('encrypt');
+    setResult('');
+    setShowVisualization(false);
+  };
+
   const getCipherIcon = () => {
     switch(cipher) {
       case 'caesar': return <RotateCw className="w-5 h-5" />;
@@ -404,10 +413,16 @@ export default function CipherForm() {
               <p className="text-gray-300 text-sm mt-1">{cipher==='caesar'? 'Enter a number 1-25' : 'Enter a keyword'}</p>
             </div>
 
-            <button onClick={handleSubmit} disabled={isProcessing}
-              className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition-all disabled:opacity-50">
-              {isProcessing? 'Processing...' : 'Submit'}
-            </button>
+            <div className="flex gap-4">
+              <button onClick={handleSubmit} disabled={isProcessing}
+                className="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-bold py-3 rounded-lg transition-all disabled:opacity-50">
+                {isProcessing? 'Processing...' : 'Submit'}
+              </button>
+              <button onClick={handleReset}
+                className="bg-gray-500 hover:bg-gray-600 text-white font-bold py-3 px-6 rounded-lg transition-all">
+                Reset
+              </button>
+            </div>
           </div>
         </div>
 
